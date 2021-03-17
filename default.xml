@@ -835,6 +835,7 @@
 
   <project path="device/snappautomotive/emulator" name="device_snappautomotive_emulator" remote="sa" />
   <project path="vendor/snappautomotive/keys" name="vendor_snappautomotive_keys" remote="sa" />
+  <project path="vendor/opensource/osmdroid" name="vendor_opensource_osmdroid" remote="sa" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
