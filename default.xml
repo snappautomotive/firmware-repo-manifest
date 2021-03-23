@@ -4,7 +4,7 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/"/>
   <remote  name="sa"
-           fetch=".."
+           fetch="."
            revision="sa-main"/>
   <default revision="refs/tags/android-11.0.0_r33"
            remote="aosp"
