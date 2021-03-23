@@ -2,15 +2,15 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch="/nas/Public/Mirrors/AOSP"/>
+           fetch="https://android.googlesource.com/"/>
   <remote  name="sa"
-           fetch="/nas/snapp-automotive"
+           fetch=".."
            revision="sa-main"/>
   <default revision="refs/tags/android-11.0.0_r33"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build/make" name="aosp/platform/build" groups="pdk" remote="sa">
+  <project path="build/make" name="firmware-aosp-build" groups="pdk" remote="sa">
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -40,7 +40,7 @@
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
   <project path="device/generic/art" name="device/generic/art" groups="pdk" />
-  <project path="device/generic/car" name="aosp/device/generic/car" groups="pdk" remote="sa"  />
+  <project path="device/generic/car" name="firmware-aosp-device_generic_car" groups="pdk" remote="sa"  />
   <project path="device/generic/common" name="device/generic/common" groups="pdk" />
   <project path="device/generic/goldfish" name="device/generic/goldfish" groups="pdk" />
   <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" groups="pdk" />
@@ -833,9 +833,9 @@
 
 ## Snapp Automotive Specific Projects
 
-  <project path="device/snappautomotive/emulator" name="device_snappautomotive_emulator" remote="sa" />
-  <project path="vendor/snappautomotive/keys" name="vendor_snappautomotive_keys" remote="sa" />
-  <project path="vendor/snappautomotive/packages/maps" name="vendor_snappautomotive_packages_maps" remote="sa" />
+  <project path="device/snappautomotive/emulator" name="firmware-device_snappautomotive_emulator" remote="sa" />
+  <project path="vendor/snappautomotive/keys" name="firmware-vendor_snappautomotive_keys" remote="sa" />
+  <project path="vendor/snappautomotive/packages/maps" name="firmware-vendor_snappautomotive_packages_maps" remote="sa" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
