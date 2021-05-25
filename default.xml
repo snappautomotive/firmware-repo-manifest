@@ -4,6 +4,9 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
+ <remote  name="sa"
+           fetch="."
+           revision="sa-android-s"/>
   <default revision="refs/tags/android-s-beta-1"
            remote="aosp"
            sync-j="4" />
@@ -1071,4 +1074,10 @@
 
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+
+## Snapp Automotive Specific Projects
+
+  <project path="device/snappautomotive/common" name="firmware-device_snappautomotive_common" remote="sa" />
+  <project path="device/snappautomotive/emulator" name="firmware-device_snappautomotive_emulator" remote="sa" />
+  <project path="vendor/snappautomotive/packages/maps" name="firmware-vendor_snappautomotive_packages_maps" remote="sa" revision="sa-main" />
 </manifest>
