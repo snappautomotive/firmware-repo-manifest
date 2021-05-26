@@ -6,7 +6,7 @@
            review="https://android-review.googlesource.com/" />
  <remote  name="sa"
            fetch="."
-           revision="sa-android-s"/>
+           revision="sa-main"/>
   <default revision="refs/tags/android-s-beta-1"
            remote="aosp"
            sync-j="4" />
@@ -656,7 +656,7 @@
   <project path="external/zstd" name="platform/external/zstd" groups="pdk" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" />
   <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" />
-  <project path="frameworks/base" name="platform/frameworks/base" groups="pdk-cw-fs,pdk-fs" />
+  <project path="frameworks/base" name="firmware-frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="sa" revision="refs/tags/sa-android-s-beta-1" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
@@ -779,7 +779,7 @@
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" name="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" groups="pdk" clone-depth="1" />
   <project path="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" name="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" groups="pdk" clone-depth="1" />
   <project path="kernel/tests" name="kernel/tests" groups="vts,pdk" />
-  <project path="libcore" name="platform/libcore" groups="pdk" revision="816daae0a7e60516f625704adee47d29b7d27036" />
+  <project path="libcore" name="firmware-libcore" groups="pdk" remote="sa" revision="refs/tags/sa-android-s-beta-1" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" groups="pdk-cw-fs,pdk-fs" />
@@ -1079,5 +1079,5 @@
 
   <project path="device/snappautomotive/common" name="firmware-device_snappautomotive_common" remote="sa" />
   <project path="device/snappautomotive/emulator" name="firmware-device_snappautomotive_emulator" remote="sa" />
-  <project path="vendor/snappautomotive/packages/maps" name="firmware-vendor_snappautomotive_packages_maps" remote="sa" revision="sa-main" />
+  <project path="vendor/snappautomotive/packages/maps" name="firmware-vendor_snappautomotive_packages_maps" remote="sa" />
 </manifest>
