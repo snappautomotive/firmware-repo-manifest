@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Build Snapp Automotive -->
+  <remove-project name="platform/build" />
+  <project path="build/make" name="firmware-aosp-build" remote="snappautomotive">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <!-- Device Snapp Automotive -->
+  <remove-project name="device/generic/car" />
+  <project path="device/generic/car" name="firmware-aosp-device_generic_car" remote="snappautomotive" />
+  <project path="device/snappautomotive/common" name="firmware-device_snappautomotive_common" remote="snappautomotive" />  
+  <project path="device/snappautomotive/emulator" name="firmware-device_snappautomotive_emulator" remote="snappautomotive" />>
+  <project path="vendor/snappautomotive/packages/maps" name="firmware-vendor_snappautomotive_packages_maps" remote="snappautomotive" />
+
+</manifest>
