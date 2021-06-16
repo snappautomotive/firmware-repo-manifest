@@ -3,14 +3,19 @@
 
   <remote  name="aosp"
            fetch="https://android.googlesource.com/"/>
-  <remote  name="sa"
-           fetch="."
-           revision="sa-main"/>
+
   <default revision="refs/tags/android-11.0.0_r33"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build/make" name="firmware-aosp-build" groups="pdk" remote="sa">
+  <remote name="arpi"
+          fetch="https://github.com/android-rpi" />
+
+  <remote name="snappautomotive"
+          fetch="https://github.com/snappautomotive"
+          revision="sa-main" />
+
+  <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -40,7 +45,7 @@
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
   <project path="device/generic/art" name="device/generic/art" groups="pdk" />
-  <project path="device/generic/car" name="firmware-aosp-device_generic_car" groups="pdk" remote="sa"  />
+  <project path="device/generic/car" name="device/generic/car" groups="pdk" />
   <project path="device/generic/common" name="device/generic/common" groups="pdk" />
   <project path="device/generic/goldfish" name="device/generic/goldfish" groups="pdk" />
   <project path="device/generic/goldfish-opengl" name="device/generic/goldfish-opengl" groups="pdk" />
@@ -831,11 +836,9 @@
   <project path="tools/treble" name="platform/tools/treble" groups="tools,pdk" />
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" />
 
-## Snapp Automotive Specific Projects
+ <!-- Snapp Automotive Specific Projects -->
 
-  <project path="device/snappautomotive/common" name="firmware-device_snappautomotive_common" remote="sa" />
-  <project path="device/snappautomotive/emulator" name="firmware-device_snappautomotive_emulator" remote="sa" />
-  <project path="vendor/snappautomotive/packages/maps" name="firmware-vendor_snappautomotive_packages_maps" remote="sa" />
+  <include name="snappautomotive.xml" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 

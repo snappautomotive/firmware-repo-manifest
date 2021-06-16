@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Build Snapp Automotive -->
+  <remove-project name="platform/build" />
+  <project path="build/make" name="firmware-aosp-build" remote="snappautomotive">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <!-- android-rpi -->
+  <remove-project name="platform/frameworks/av" />
+  <project path="frameworks/av" name="frameworks_av" revision="arpi-11" remote="arpi" />
+  <remove-project name="platform/frameworks/native" />
+  <project path="frameworks/native" name="frameworks_native" revision="arpi-11" remote="arpi" />
+
+  <remove-project name="platform/external/mesa3d" />
+  <project path="external/mesa3d" name="external_mesa3d" revision="v3d-20.3" remote="arpi" />
+  <project path="external/drm_gralloc" name="external_drm_gralloc" revision="v3d-20.3" remote="arpi" />
+
+  <project path="kernel/arpi" name="kernel_arpi" revision="arpi-5.4.y" remote="arpi" />
+  <project path="hardware/arpi" name="hardware_arpi" revision="arpi-11" remote="arpi" />
+  <project path="device/arpi/rpi4" name="device_arpi_rpi4" revision="arpi-11" remote="arpi" />
+
+  <!-- Device Snapp Automotive -->
+  <remove-project name="device/generic/car" />
+  <project path="device/generic/car" name="firmware-aosp-device_generic_car" remote="snappautomotive" />
+  <project path="device/snappautomotive/common" name="firmware-device_snappautomotive_common" remote="snappautomotive" />  
+  <project path="device/snappautomotive/emulator" name="firmware-device_snappautomotive_emulator" remote="snappautomotive" />
+  <project path="device/snappautomotive/rpi" name="firmware-device_snappautomotive_rpi" remote="snappautomotive" />
+  <project path="vendor/snappautomotive/packages/maps" name="firmware-vendor_snappautomotive_packages_maps" remote="snappautomotive" />
+
+</manifest>
