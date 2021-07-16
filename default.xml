@@ -5,7 +5,7 @@
            fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
 
-  <default revision="refs/tags/android-s-beta-2"
+  <default revision="refs/tags/android-s-beta-3"
            remote="aosp"
            sync-j="4" />
 
